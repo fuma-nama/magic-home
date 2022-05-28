@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r;
+}
+
+button {
+  @apply border-pink-600 border-4 px-8 py-5 w-fit rounded-full text-xl font-bold transition-colors;
+}
+
+button:hover {
+  @apply bg-pink-600 shadow;
+}
+
+.mask-container {
+  @apply gradient-mask-r-0;
+}
+
+.shadow {
+  @apply shadow-pink-600;
+  box-shadow: var(--tw-shadow-color) 0px 7px 29px 0px;
+}
+
+.footer {
+  @apply relative;
+}
+
+.footer > * {
+  @apply z-10;
+}
+
+.footer::before {
+  content: "";
+  background-image: url("../images/minecraft.webp");
+  @apply absolute w-full h-full opacity-20;
+}
