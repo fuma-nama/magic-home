@@ -521,12 +521,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 5rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .flex {
@@ -619,20 +619,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-width: fit-content;
 }
 
+.min-w-\[25rem\] {
+  min-width: 25rem;
+}
+
 .min-w-\[20rem\] {
   min-width: 20rem;
 }
 
 .min-w-\[10rem\] {
   min-width: 10rem;
-}
-
-.min-w-\[30rem\] {
-  min-width: 30rem;
-}
-
-.min-w-\[25rem\] {
-  min-width: 25rem;
 }
 
 .max-w-full {
@@ -845,16 +841,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 500;
 }
 
-.leading-tight {
-  line-height: 1.25;
-}
-
-.leading-snug {
-  line-height: 1.375;
-}
-
 .leading-normal {
   line-height: 1.5;
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .text-black {
@@ -962,8 +954,6 @@ button:hover {
   background-repeat: no-repeat;
   position: absolute;
   top: 0px;
-  left: 0px;
-  right: 0px;
   height: 100%;
   width: 100%;
   opacity: 0.2;

@@ -35,7 +35,7 @@ button:hover {
   content: "";
   background-image: url("../images/minecraft.webp");
   background-repeat: no-repeat;
-  @apply absolute top-0 left-0 right-0 w-full h-full opacity-20;
+  @apply absolute top-0 opacity-20 w-full h-full;
 }
 
 .img-grid {
