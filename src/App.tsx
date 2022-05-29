@@ -45,7 +45,7 @@ function MobileSupport() {
   };
 
   var ww = width; //get proper width
-  var mw = 1000; // min width of site
+  var mw = 800; // min width of site
   var ratio = ww / mw; //calculate ratio
 
   return (

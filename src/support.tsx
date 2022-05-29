@@ -1,8 +1,9 @@
+import { donate_link, server_link } from "./links";
 import {
-  Button,
   Container,
   Description,
   GradientTitle,
+  LinkButton,
   MarginDescription,
 } from "./util/components";
 
@@ -14,8 +15,8 @@ export function SupportPanel() {
       <div className="flex flex-col gap-5 items-center">
         <MarginDescription>Support Our Community</MarginDescription>
         <div className="flex flex-row gap-5">
-          <Button>Join Us</Button>
-          <Button>Donate</Button>
+          <LinkButton link={server_link}>Join Us</LinkButton>
+          <LinkButton link={donate_link}>Donate</LinkButton>
         </div>
       </div>
     </Container>
