@@ -11,11 +11,13 @@ import {
   SizedImg,
   MarginDescription,
   Title,
+  LinkButton,
 } from "./util/components";
 import { Clients } from "./Clients";
 import { Services } from "./services";
 import { FoundersPanel } from "./founders";
 import { SupportPanel } from "./support";
+import { server_link } from "./links";
 const Item = extendComponent(
   <div className="flex flex-col gap-5 bg-pink-600 rounded-lg p-2 min-w-max" />
 );
@@ -48,7 +50,9 @@ function FriendlyPanel() {
           <br />
           Game lovers and professionals
         </MarginDescription>
-        <Button className="mt-14">Join Us</Button>
+        <LinkButton link={server_link} className="mt-14">
+          Join Us
+        </LinkButton>
       </div>
     </Row>
   );

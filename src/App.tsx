@@ -1,6 +1,7 @@
 import { Introduction } from "./Headline";
 import "./styles/output.css";
 import { Body } from "./Body";
+import { useState } from "react";
 
 function App() {
   return <MyComponent />;
@@ -9,6 +10,7 @@ function App() {
 export const MyComponent = () => {
   return (
     <div className="overflow-x-hidden overflow-y-auto bg-zinc-900 w-full h-full">
+      <MobileSupport />
       <Nav />
       <div className="flex flex-col gap-10">
         <Introduction />
@@ -28,6 +30,34 @@ function Nav() {
       <a className="font-bold">綜合資本小天堂</a>
       <a className="ml-auto">Designed by MONEY</a>
     </div>
+  );
+}
+
+function MobileSupport() {
+  const getWidth = () =>
+    window.innerWidth < screen.width ? window.innerWidth : screen.width;
+
+  const [width, setWidth] = useState(getWidth);
+
+  window.onresize = () => {
+    const winWidth = getWidth();
+    setWidth(winWidth);
+    console.log(winWidth);
+  };
+
+  var ww = width; //get proper width
+  var mw = 1000; // min width of site
+  var ratio = ww / mw; //calculate ratio
+
+  return (
+    <meta
+      name="viewport"
+      content={`width=${ww}, ${
+        ww < mw
+          ? `initial-scale=${ratio}, maximum-scale=${ratio}, minimum-scale=${ratio}`
+          : "initial-scale=1.0, maximum-scale=2, minimum-scale=1.0"
+      } user-scalable=no`}
+    />
   );
 }
 

@@ -36,7 +36,7 @@ function ClientItem({ client }: { client: any }) {
   return (
     <div className="flex flex-row rounded-lg gap-3 bg-pink-600 p-3">
       <img src={client.image} className="w-20 h-20" />
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-3">
         <Description>{client.head}</Description>
         <a className="text-xl">{client.content}</a>
       </div>

@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import logo from "./images/logo.svg";
+import { server_link } from "./links";
 import {
   Title,
   GradientTitle,
   Description,
   Img,
   Container,
-  Button,
+  LinkButton,
 } from "./util/components";
 
 export function Introduction() {
@@ -31,7 +32,9 @@ function MainPanel() {
         <Description className="mt-4">
           The powerful community for games
         </Description>
-        <Button className="mt-10">Join Us</Button>
+        <LinkButton link={server_link} className="mt-10">
+          Join Us
+        </LinkButton>
       </div>
       <Img
         alt="community-svg"

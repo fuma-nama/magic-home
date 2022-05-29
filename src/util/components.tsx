@@ -10,17 +10,28 @@ export const Description = extendComponent(
 export const MarginDescription = extendComponent(
   <Description className="mt-8" />
 );
+export const LinkButton = (props: { link: string; [key: string]: any }) => {
+  const open = window.open;
+  return <Button {...props} onClick={() => open(props.link, "_blank")} />;
+};
 export const Button = extendComponent(
   <motion.button whileHover={{ scale: 1.2 }} />
 );
 export const Img = extendComponent(
-  <motion.img initial={{ y: "12vh" }} whileInView={{ y: 0 }} />
+  <motion.img
+    initial={{ y: "12vh", scale: 0.5 }}
+    whileInView={{ y: 0, scale: 1 }}
+  />
 );
 export const GradientTitle = extendComponent(
   <Title className="gradient-text from-purple-400 to-pink-600" />
 );
 export const Container = extendComponent(
-  <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} />
+  <motion.div
+    transition={{ duration: 0.5 }}
+    initial={{ opacity: 0, y: "3vh" }}
+    whileInView={{ opacity: 1, y: 0 }}
+  />
 );
 export const SizedImg = extendComponent(
   <Img className="max-w-fit flex-1 min-w-[10rem]" />

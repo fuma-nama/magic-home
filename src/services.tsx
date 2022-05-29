@@ -5,6 +5,7 @@ import {
   MarginDescription,
   Title,
   extendComponent,
+  Img,
 } from "./util/components";
 import games from "./info/games";
 import bots from "./info/bots";
@@ -59,8 +60,8 @@ const GamePanel = extendComponent(
 function HoneyCup() {
   return (
     <GamePanel>
-      <SizedImg src={games[2].image} className="w-52 h-52 rounded-lg" />
-      <div className="flex flex-col">
+      <Img src={games[2].image} className="w-52 h-52 rounded-lg" />
+      <div className="flex flex-col flex-1">
         <GradientTitle>蜂蜜盃</GradientTitle>
         <MarginDescription>
           Fight with other players and proof your power!
@@ -73,8 +74,8 @@ function HoneyCup() {
 function GhostCatchRoom() {
   return (
     <GamePanel>
-      <SizedImg src={games[0].image} className="w-52 h-52 rounded-lg" />
-      <div className="flex flex-col">
+      <Img src={games[0].image} className="w-52 h-52 rounded-lg" />
+      <div className="flex flex-col flex-1">
         <GradientTitle>鬼抓人密室</GradientTitle>
         <MarginDescription>A funny game in Minecraft</MarginDescription>
       </div>
