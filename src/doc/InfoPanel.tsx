@@ -35,11 +35,11 @@ function IssuesPanel() {
 }
 function DeveloperPanel() {
   return (
-    <Container className="flex flex-row gap-8 flex-wrap">
+    <Container className="flex flex-row gap-8 flex-wrap items-start">
       <Img
         src={avatar}
         alt="Avatar"
-        className="min-w-[25rem] h-min flex-1 max-w-3xl"
+        className="min-w-[25rem] flex-1 max-w-3xl"
       />
       <div className="flex flex-col">
         <GradientTitle>The Developer</GradientTitle>
