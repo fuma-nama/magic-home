@@ -42,7 +42,6 @@ function MobileSupport() {
   window.onresize = () => {
     const winWidth = getWidth();
     setWidth(winWidth);
-    console.log(winWidth);
   };
 
   var ww = width; //get proper width
