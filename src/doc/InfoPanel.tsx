@@ -2,6 +2,7 @@ import { dev_yt_link, github_link } from "../links";
 import {
   Container,
   GradientTitle,
+  Img,
   LinkButton,
   MarginDescription,
   SizedImg,
@@ -35,7 +36,11 @@ function IssuesPanel() {
 function DeveloperPanel() {
   return (
     <Container className="flex flex-row gap-8 flex-wrap">
-      <SizedImg src={avatar} alt="Avatar" className="min-w-[25rem] h-min" />
+      <Img
+        src={avatar}
+        alt="Avatar"
+        className="min-w-[25rem] h-min flex-1 max-w-3xl"
+      />
       <div className="flex flex-col">
         <GradientTitle>The Developer</GradientTitle>
         <Title>Of This Website</Title>

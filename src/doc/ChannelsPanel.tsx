@@ -47,7 +47,7 @@ export function ChannelsPanel() {
 
 function Head() {
   return (
-    <Container className="flex flex-row footer p-5 justify-center">
+    <Container className="flex flex-row footer p-10 justify-center">
       <div className="flex flex-col gap-5">
         <GradientTitle>綜合遊戲小天堂</GradientTitle>
         <Title>大致介紹</Title>
