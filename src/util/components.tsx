@@ -34,7 +34,7 @@ export const Container = extendComponent(
   />
 );
 export const SizedImg = extendComponent(
-  <Img className="max-w-fit flex-1 min-w-[10rem]" />
+  <Img className="flex-1 min-w-[10rem] max-w-3xl" />
 );
 export function extendComponent<T = undefined>(
   element: React.ReactElement<T>

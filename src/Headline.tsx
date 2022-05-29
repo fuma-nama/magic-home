@@ -55,9 +55,13 @@ function BlocksGrid() {
     items.push(colors[color]);
   }
 
-  const element = (color: string) => {
+  const element = (index: number, color: string) => {
     return (
-      <motion.div style={{ backgroundColor: color }} className="rounded-lg" />
+      <motion.div
+        key={index}
+        style={{ backgroundColor: color }}
+        className="rounded-lg"
+      />
     );
   };
 
@@ -68,7 +72,7 @@ function BlocksGrid() {
       layout
       whileInView={{ scale: 1 }}
     >
-      {items.map((c) => element(c))}
+      {items.map((c, i) => element(i, c))}
     </motion.div>
   );
 }

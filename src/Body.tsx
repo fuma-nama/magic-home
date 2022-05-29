@@ -77,7 +77,7 @@ function GamesGrid() {
   return (
     <div className="img-grid img-grid-cols-3 py-10 gap-5">
       {games.map((g) => (
-        <GameItem game={g} />
+        <GameItem key={g.name} game={g} />
       ))}
     </div>
   );
@@ -99,9 +99,8 @@ function MemberGrid() {
       </MarginDescription>
       <div className="flex flex-row flex-wrap gap-5">
         {members.map((m) => (
-          <GridItem member={m} />
+          <GridItem key={m.name} member={m} />
         ))}
-        <Item className="bg-gray-500 text-center w-20">More</Item>
       </div>
     </Container>
   );

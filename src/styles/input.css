@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .gradient-text {
-  @apply text-transparent bg-clip-text bg-gradient-to-r;
+  @apply text-transparent bg-clip-text bg-gradient-to-r w-max max-w-full;
 }
 
 button {
@@ -34,7 +34,8 @@ button:hover {
 .footer::before {
   content: "";
   background-image: url("../images/minecraft.webp");
-  @apply absolute w-full h-full opacity-20;
+  background-repeat: no-repeat;
+  @apply absolute top-0 left-0 right-0 w-full h-full opacity-20;
 }
 
 .img-grid {
@@ -46,4 +47,48 @@ button:hover {
 
 .img-grid-cols-3 {
   --columns: 3;
+}
+
+a[href] {
+  @apply text-pink-500 font-bold underline text-xl;
+}
+
+h1 {
+  @apply gradient-text font-bold text-8xl from-purple-500 to-pink-600;
+}
+
+h2 {
+  @apply font-bold text-8xl;
+}
+
+h3 {
+  @apply font-bold text-5xl text-purple-500 my-10;
+}
+
+p {
+  @apply text-3xl font-bold my-3;
+}
+
+table {
+  @apply bg-slate-800 overflow-hidden rounded-2xl text-left dark:text-gray-400;
+}
+
+thead {
+  @apply uppercase bg-gray-700 text-white;
+}
+
+th {
+  @apply p-10 text-6xl font-bold;
+}
+
+tr {
+  @apply border-b border-white/20;
+}
+
+hr {
+  @apply text-pink-500 bg-pink-500;
+}
+
+td {
+  @apply text-2xl p-5;
 }

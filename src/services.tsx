@@ -1,11 +1,11 @@
 import {
   Container,
   GradientTitle,
-  SizedImg,
   MarginDescription,
   Title,
   extendComponent,
   Img,
+  LinkButton,
 } from "./util/components";
 import games from "./info/games";
 import bots from "./info/bots";
@@ -14,6 +14,7 @@ export function Services() {
   return (
     <>
       <Activities />
+      <MoreMinecraftMaps />
       <OtherServices />
     </>
   );
@@ -30,7 +31,12 @@ function OtherServices() {
       </MarginDescription>
       <div className="flex flex-row gap-5 flex-wrap mt-10">
         {bots.map((icon) => (
-          <img src={icon} className="rounded-lg w-20 h-20" alt="bot" />
+          <img
+            src={icon}
+            key={icon}
+            className="rounded-lg w-20 h-20"
+            alt="bot"
+          />
         ))}
       </div>
     </Container>
@@ -68,6 +74,24 @@ function HoneyCup() {
         </MarginDescription>
       </div>
     </GamePanel>
+  );
+}
+
+function MoreMinecraftMaps() {
+  return (
+    <Container className="flex flex-col footer w-full items-center py-10">
+      <Title>蜂蜜小鎮</Title>
+      <GradientTitle>魔法天堂生存</GradientTitle>
+      <MarginDescription>
+        可能會被伺服器主整到懷疑人生的伺服器!
+      </MarginDescription>
+      <LinkButton
+        link="https://homeofmagic.mystrikingly.com/"
+        className="mt-10"
+      >
+        Learn More
+      </LinkButton>
+    </Container>
   );
 }
 

@@ -31,7 +31,10 @@ function Features() {
       <GradientTitle>Features</GradientTitle>
       <Container className="grid grid-cols-3 gap-10">
         {feature.map((f) => (
-          <div className="bg-pink-600 min-w-fit h-52 rounded-lg p-10 text-center">
+          <div
+            key={f}
+            className="bg-pink-600 min-w-fit h-52 rounded-lg p-10 text-center"
+          >
             <Description>{f}</Description>
           </div>
         ))}

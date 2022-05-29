@@ -26,7 +26,7 @@ function ClientGrid() {
   return (
     <div className="flex flex-row flex-wrap gap-5">
       {clients.map((c) => (
-        <ClientItem client={c} />
+        <ClientItem key={c.head} client={c} />
       ))}
     </div>
   );
