@@ -20,11 +20,11 @@ const Item = extendComponent(
   <div className="flex flex-col gap-5 bg-pink-600 rounded-lg p-2 min-w-max" />
 );
 const Row = extendComponent(
-  <Container className="flex flex-row gap-5 flex-wrap" />
+  <Container className="flex flex-row gap-5 flex-wrap max-w-full" />
 );
 export function Body() {
   return (
-    <div className="flex flex-col gap-52 w-full items-center p-20">
+    <div className="flex flex-col gap-52 w-full items-center px-vw-36">
       <MemberGrid />
       <FriendlyPanel />
       <ChatChannelsPanel />
@@ -71,7 +71,7 @@ function ChatChannelsPanel() {
 }
 function GamesGrid() {
   return (
-    <div className="grid grid-cols-3 py-10 gap-5">
+    <div className="img-grid img-grid-cols-3 py-10 gap-5">
       {games.map((g) => (
         <GameItem game={g} />
       ))}
@@ -93,11 +93,11 @@ function MemberGrid() {
       <MarginDescription>
         Find your like-minded friends in the server!
       </MarginDescription>
-      <div className="grid grid-cols-9 w-fit gap-5">
+      <div className="flex flex-row flex-wrap gap-5">
         {members.map((m) => (
           <GridItem member={m} />
         ))}
-        <Item className="bg-gray-500 text-center">More</Item>
+        <Item className="bg-gray-500 text-center w-20">More</Item>
       </div>
     </Container>
   );

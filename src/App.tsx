@@ -1,6 +1,6 @@
 import { Introduction } from "./Headline";
 import "./styles/output.css";
-import { Body } from "./Targets";
+import { Body } from "./Body";
 
 function App() {
   return <MyComponent />;

@@ -4,6 +4,7 @@ import {
   SizedImg,
   MarginDescription,
   Title,
+  extendComponent,
 } from "./util/components";
 import games from "./info/games";
 import bots from "./info/bots";
@@ -37,7 +38,7 @@ function OtherServices() {
 
 function Activities() {
   return (
-    <Container className="flex flex-col">
+    <Container className="flex flex-col max-w-full">
       <GradientTitle>Activities and Maps</GradientTitle>
       <Title>For different Games</Title>
       <MarginDescription>
@@ -52,9 +53,12 @@ function Activities() {
   );
 }
 
+const GamePanel = extendComponent(
+  <Container className="flex flex-row gap-5 flex-wrap" />
+);
 function HoneyCup() {
   return (
-    <Container className="flex flex-row gap-5 min-w-max">
+    <GamePanel>
       <SizedImg src={games[2].image} className="w-52 h-52 rounded-lg" />
       <div className="flex flex-col">
         <GradientTitle>蜂蜜盃</GradientTitle>
@@ -62,18 +66,18 @@ function HoneyCup() {
           Fight with other players and proof your power!
         </MarginDescription>
       </div>
-    </Container>
+    </GamePanel>
   );
 }
 
 function GhostCatchRoom() {
   return (
-    <Container className="flex flex-row gap-5 min-w-max">
+    <GamePanel>
       <SizedImg src={games[0].image} className="w-52 h-52 rounded-lg" />
       <div className="flex flex-col">
         <GradientTitle>鬼抓人密室</GradientTitle>
         <MarginDescription>A funny game in Minecraft</MarginDescription>
       </div>
-    </Container>
+    </GamePanel>
   );
 }

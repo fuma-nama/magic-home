@@ -36,3 +36,14 @@ button:hover {
   background-image: url("../images/minecraft.webp");
   @apply absolute w-full h-full opacity-20;
 }
+
+.img-grid {
+  --max-width: 200px;
+  grid-template-columns: repeat(auto-fit, var(--max-width));
+  max-width: var(--max-width) * var(--columns);
+  @apply grid;
+}
+
+.img-grid-cols-3 {
+  --columns: 3;
+}

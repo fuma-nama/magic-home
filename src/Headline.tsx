@@ -60,10 +60,10 @@ function BlocksGrid() {
 
   return (
     <motion.div
-      initial={{ x: "12vh" }}
-      className="grid grid-cols-5 w-full h-full opacity-40"
+      initial={{ scale: 0 }}
+      className="grid grid-cols-5 w-full h-full opacity-40 gap-10"
       layout
-      whileInView={{ gap: "2.5rem", x: 0 }}
+      whileInView={{ scale: 1 }}
     >
       {items.map((c) => element(c))}
     </motion.div>

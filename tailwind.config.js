@@ -1,7 +1,8 @@
 module.exports = {
   content: ["./src/**/*.{html,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [require("tailwind-gradient-mask-image")],
+  theme: {},
+  plugins: [
+    require("tailwindcss-fluid-spacing"),
+    require("tailwind-gradient-mask-image"),
+  ],
 };
