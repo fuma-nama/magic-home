@@ -71,7 +71,6 @@ function Nav({ tab, setTab }: { tab: Tabs; setTab: (index: Tabs) => void }) {
       <a className="ml-auto" href="https://homeofmagic.mystrikingly.com/">
         蜂蜜小鎮
       </a>
-      <a>Designed by MONEY</a>
     </div>
   );
 }
@@ -81,7 +80,6 @@ function MobileSupport() {
     window.innerWidth < screen.width ? window.innerWidth : screen.width;
 
   const [width, setWidth] = useState(getWidth);
-
   window.onresize = () => {
     const winWidth = getWidth();
     setWidth(winWidth);
@@ -94,11 +92,11 @@ function MobileSupport() {
   return (
     <meta
       name="viewport"
-      content={`width=${ww}, ${
+      content={
         ww < mw
-          ? `initial-scale=${ratio}, maximum-scale=${ratio}, minimum-scale=${ratio}`
-          : "initial-scale=1.0, maximum-scale=2, minimum-scale=1.0"
-      } user-scalable=no`}
+          ? `width=${ww}, initial-scale=${ratio}, maximum-scale=${ratio}, minimum-scale=${ratio} user-scalable=no`
+          : "width=device-width, initial-scale=1.0"
+      }
     />
   );
 }
