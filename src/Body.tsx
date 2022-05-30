@@ -45,11 +45,7 @@ function FriendlyPanel() {
       <div className="flex flex-col">
         <Title>Friendly and Helpful</Title>
         <GradientTitle>Peoples</GradientTitle>
-        <MarginDescription>
-          Connect with Pro Gamers, Game Developers,
-          <br />
-          Game lovers and professionals
-        </MarginDescription>
+        <MarginDescription>Connect with Others</MarginDescription>
         <LinkButton link={server_link} className="mt-14">
           Join Us
         </LinkButton>

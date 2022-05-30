@@ -2,16 +2,28 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import safe from "../images/safe.svg";
 import { Container, Img, LinkButton } from "../util/components";
+import { useTranslate } from "../util/translate";
 
-const panelMd = `
-## Server
-# Rules
-&nbsp;  
-We are always protecting our members.
-Make sure links, images, videos are safe and not NSFW
+const panelMd: { [key: string]: string } = {
+  en: `
+  ## Server
+  # Rules
+  &nbsp;  
+  We are always protecting our members.
+  Make sure links, images, videos are safe and not NSFW
 
-Take a look at: https://discord.com/guidelines
-`;
+  Take a look at: https://discord.com/guidelines
+  `,
+  cn: `
+  ## 服務器
+  # 規則
+  &nbsp;  
+  我們一直在保護我們的會員。
+  確保鏈接、圖像、視頻是安全的，不是 NSFW
+
+  看看: https://discord.com/guidelines
+  `,
+};
 
 const rulesMd = `
 ### 更新日期: 2022/05/07
@@ -49,6 +61,8 @@ const rulesMd = `
 `;
 
 export function RulesPanel() {
+  const { lang } = useTranslate();
+
   return (
     <Container className="flex flex-col w-full p-20 gap-10">
       <div className="flex flex-row gap-5">
@@ -56,7 +70,7 @@ export function RulesPanel() {
         <div>
           <ReactMarkdown
             className="flex flex-col"
-            children={panelMd}
+            children={panelMd[lang]}
             remarkPlugins={[remarkGfm]}
           />
           <LinkButton link="https://discord.com/guidelines" className="mt-5">

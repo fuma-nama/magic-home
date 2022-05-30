@@ -1,31 +1,42 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslate } from "./translate";
 
 export const Title = extendComponent(
-  <a className="font-bold text-7xl leading-tight" />
+  <a className="font-bold text-7xl leading-tight" />,
+  true
 );
 export const Description = extendComponent(
-  <a className="text-3xl font-medium" />
+  <a className="text-3xl font-medium whitespace-pre-line" />,
+  true
 );
+
+export const Button = extendComponent(
+  <motion.button whileHover={{ scale: 1.2 }} />,
+  true
+);
+
 export const MarginDescription = extendComponent(
   <Description className="mt-8" />
 );
+
 export const LinkButton = (props: { link: string; [key: string]: any }) => {
   const open = window.open;
   return <Button {...props} onClick={() => open(props.link, "_blank")} />;
 };
-export const Button = extendComponent(
-  <motion.button whileHover={{ scale: 1.2 }} />
-);
+
 export const Img = extendComponent(
   <motion.img
     initial={{ y: "12vh", scale: 0.5 }}
     whileInView={{ y: 0, scale: 1 }}
   />
 );
+
 export const GradientTitle = extendComponent(
-  <Title className="gradient-text from-purple-400 to-pink-600" />
+  <Title className="gradient-text from-purple-400 to-pink-600" />,
+  true
 );
+
 export const Container = extendComponent(
   <motion.div
     transition={{ duration: 0.5 }}
@@ -37,9 +48,11 @@ export const SizedImg = extendComponent(
   <Img className="flex-1 min-w-[5rem] max-w-3xl" />
 );
 export function extendComponent<T = undefined>(
-  element: React.ReactElement<T>
+  element: React.ReactElement<T>,
+  translate?: boolean
 ): (props: T) => React.ReactElement {
   const props = element.props;
+
   return (extended: T) => {
     const { children } = extended as { [key: string]: any };
 
@@ -55,7 +68,7 @@ export function extendComponent<T = undefined>(
           (p, e) => `${p} ${e}`
         ),
       },
-      children
+      translate ? useTranslate().t(children) : children
     );
   };
 }
@@ -69,4 +82,33 @@ function extendProp<T>(
   const m: { [key: string]: any } = {};
   m[name] = onGet(props[name], extended[name]);
   return m;
+}
+
+export type SelectProps = {
+  children: {
+    [value: string]: string;
+  };
+  value?: string;
+  onSelect: (value: string) => void;
+};
+export function Select({ children: options, value, onSelect }: SelectProps) {
+  const map = () => {
+    const elements = [];
+
+    for (const [value, label] of Object.entries(options)) {
+      elements.push(
+        <option key={value} value={value}>
+          {label}
+        </option>
+      );
+    }
+
+    return elements;
+  };
+
+  return (
+    <select value={value} onChange={(e) => onSelect(e.target.value)}>
+      {map()}
+    </select>
+  );
 }

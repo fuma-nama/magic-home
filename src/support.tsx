@@ -46,7 +46,7 @@ function Features() {
 function HistoryPanel() {
   return (
     <div className="flex flex-col items-center">
-      <a className="text-5xl font-bold">Our Community has been created for</a>
+      <Description>Our Community has been created for</Description>
       <GradientTitle>2 Years</GradientTitle>
     </div>
   );

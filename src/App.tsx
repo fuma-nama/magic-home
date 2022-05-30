@@ -5,12 +5,36 @@ import { useState } from "react";
 import { RulesPanel } from "./doc/RulesPanel";
 import { ChannelsPanel } from "./doc/ChannelsPanel";
 import { InfoPanel } from "./doc/InfoPanel";
+import { cn } from "./languages/cn";
+import { Select } from "./util/components";
+import {
+  LanguageContext,
+  LanguageContextType,
+  useTranslate,
+} from "./util/translate";
+import en from "./languages/en";
 
 function App() {
-  return <MyComponent />;
+  const [lang, setLang] = useState("cn");
+
+  const c: LanguageContextType = {
+    languages: {
+      cn: cn,
+      en: en,
+    },
+    lang: lang,
+    setLanguage(l) {
+      setLang(l);
+    },
+  };
+  return (
+    <LanguageContext.Provider value={c}>
+      <Page />
+    </LanguageContext.Provider>
+  );
 }
 
-export const MyComponent = () => {
+export const Page = () => {
   const [tab, setTab] = useState<Tabs>(0);
 
   return (
@@ -51,10 +75,12 @@ const Link = ({ children, index, tab, onClick }: TabItemProps) => {
 };
 
 function Nav({ tab, setTab }: { tab: Tabs; setTab: (index: Tabs) => void }) {
-  const tabs = ["Home", "Rules", "Channels", "Info"];
+  const { tArray, lang, setLang } = useTranslate();
+
+  const tabs = tArray(["Home", "Rules", "Channels", "Info"]);
 
   return (
-    <div className="flex flex-row bg-black/80 backdrop-blur-lg sticky top-0 w-full z-20 p-5 items-center gap-5">
+    <div className="flex flex-row bg-black/80 backdrop-blur-lg sticky top-0 w-full z-20 p-5 items-center gap-5 overflow-x-auto">
       <img
         src="https://cdn.discordapp.com/icons/676806725105352704/a_ace5313f9065cdf99038087ce4ed76cb.gif"
         className="h-10 rounded-full"
@@ -71,6 +97,12 @@ function Nav({ tab, setTab }: { tab: Tabs; setTab: (index: Tabs) => void }) {
       <a className="ml-auto" href="https://homeofmagic.mystrikingly.com/">
         蜂蜜小鎮
       </a>
+      <Select value={lang} onSelect={setLang}>
+        {{
+          cn: "Chinese",
+          en: "English",
+        }}
+      </Select>
     </div>
   );
 }

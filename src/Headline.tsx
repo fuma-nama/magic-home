@@ -9,6 +9,7 @@ import {
   Container,
   LinkButton,
 } from "./util/components";
+import { useTranslate } from "./util/translate";
 
 export function Introduction() {
   return (
@@ -22,6 +23,8 @@ export function Introduction() {
 }
 
 function MainPanel() {
+  const { t } = useTranslate();
+
   return (
     <Container className="flex flex-row justify-center p-10 z-10 relative gap-5">
       <div className="flex flex-col mt-10 max-w-3xl gap-3">

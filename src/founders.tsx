@@ -48,7 +48,7 @@ function Profile({
     <Container className="flex flex-row gap-5 p-5 rounded-lg bg-slate-800 mt-16 w-auto max-w-full">
       <img src={avatar} alt="Founder Avatar" className="w-40 h-40 rounded-lg" />
       <div className="flex flex-col gap-5 flex-1 min-w-0">
-        <a className="text-pink-600 text-4xl font-bold">{title}</a>
+        <Description className="text-pink-600">{title}</Description>
         <GradientTitle>{name}</GradientTitle>
         {children}
       </div>
