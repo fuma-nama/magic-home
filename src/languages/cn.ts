@@ -42,14 +42,13 @@ export const cn: Language = {
     "最重要的成員，也是我們社區的管理員",
   "Website Developer": "網站開發人員",
   "A Full-Stack Engineer who has no friends": "沒有朋友的全棧工程師",
-  Features: "特徵",
+  Features: "功能",
   Chat: "聊天",
   "Game Play": "遊戲",
   "Issue Helper": "問題助手",
   Bots: "機器人",
   Activities: "活動",
   "Our Community has been created for": "我們的社區已經創建了",
-  "2 Years": "2年",
   "Support Our Community": "支持我們的社區",
   Donate: "捐款",
 
@@ -71,6 +70,10 @@ export const cn: Language = {
     {
       key: [Any, "Members"],
       value: ([count]) => `${count}名成員`,
+    },
+    {
+      key: [Any, "Years"],
+      value: ([years]) => `${years}年`,
     },
   ],
 

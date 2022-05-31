@@ -145,7 +145,7 @@ export function lines(...text: string[]): ArrayContext {
     type: "lines",
   };
 }
-export function spilt(...text: (string | any)[]): ArrayContext {
+export function split(...text: (string | any)[]): ArrayContext {
   return {
     text: text,
     type: "split",

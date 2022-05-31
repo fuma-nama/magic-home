@@ -5,7 +5,9 @@ import {
   GradientTitle,
   LinkButton,
   MarginDescription,
+  split,
 } from "./util/components";
+import info from "./info/server";
 
 export function SupportPanel() {
   return (
@@ -47,7 +49,7 @@ function HistoryPanel() {
   return (
     <div className="flex flex-col items-center">
       <Description>Our Community has been created for</Description>
-      <GradientTitle>2 Years</GradientTitle>
+      <GradientTitle>{split(info.created, "Years")}</GradientTitle>
     </div>
   );
 }
