@@ -12,7 +12,7 @@ import {
   LanguageContextType,
   useTranslate,
 } from "./util/translate";
-import en from "./languages/en";
+import { en } from "./languages/en";
 
 function App() {
   const [lang, setLang] = useState("cn");

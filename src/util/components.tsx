@@ -53,6 +53,28 @@ export function extendComponent<T = undefined>(
 ): (props: T) => React.ReactElement {
   const props = element.props;
 
+  const translateChild = (children: any): any | string | undefined => {
+    if (!children || !translate) return children;
+    const { t, tSplit, tLines } = useTranslate();
+
+    if (typeof children === "string") return t(children);
+
+    if ("text" in children && "type" in children) {
+      const { text, type } = children as ArrayContext;
+
+      switch (type) {
+        case "lines":
+          return tLines(text);
+        case "split":
+          return tSplit(text);
+      }
+    }
+
+    if (children instanceof Array) {
+      return children.map((e) => translateChild(e));
+    }
+  };
+
   return (extended: T) => {
     const { children } = extended as { [key: string]: any };
 
@@ -68,7 +90,7 @@ export function extendComponent<T = undefined>(
           (p, e) => `${p} ${e}`
         ),
       },
-      translate ? useTranslate().t(children) : children
+      translateChild(children)
     );
   };
 }
@@ -111,4 +133,21 @@ export function Select({ children: options, value, onSelect }: SelectProps) {
       {map()}
     </select>
   );
+}
+
+type ArrayContext = {
+  text: any[];
+  type: "split" | "lines";
+};
+export function lines(...text: string[]): ArrayContext {
+  return {
+    text: text,
+    type: "lines",
+  };
+}
+export function spilt(...text: (string | any)[]): ArrayContext {
+  return {
+    text: text,
+    type: "split",
+  };
 }

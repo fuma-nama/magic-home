@@ -3,9 +3,9 @@ import {
   Container,
   GradientTitle,
   Img,
+  lines,
   LinkButton,
   MarginDescription,
-  SizedImg,
   Title,
 } from "../util/components";
 import { useTranslate } from "../util/translate";
@@ -25,7 +25,12 @@ function IssuesPanel() {
   return (
     <Container className="flex flex-col gap-5">
       <Title>Report Issues</Title>
-      <MarginDescription>Report Issue Info</MarginDescription>
+      <MarginDescription>
+        {lines(
+          "This website is open source.",
+          "Find any Problems? Tell me on the Github Repo!"
+        )}
+      </MarginDescription>
       <LinkButton link={github_link}>Repository</LinkButton>
     </Container>
   );
@@ -44,7 +49,12 @@ function DeveloperPanel() {
         <GradientTitle>The Developer</GradientTitle>
         <Title>Of This Website</Title>
         <MarginDescription className="leading-normal">
-          {t("MONEY Info")}
+          {lines(
+            "Hello, I am MONEY.",
+            "I have been worked on this website for a week,",
+            "As a Full-Stack Engineer, I have a Github account and my own Youtube Channel",
+            "Feel free to subscribe my channel or see My Projects on Github"
+          )}
           <LinkButton link={dev_yt_link} className="mt-10">
             My Channel
           </LinkButton>

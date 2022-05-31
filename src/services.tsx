@@ -6,6 +6,7 @@ import {
   extendComponent,
   Img,
   LinkButton,
+  lines,
 } from "./util/components";
 import games from "./info/games";
 import bots from "./info/bots";
@@ -49,8 +50,10 @@ function Activities() {
       <GradientTitle>Activities and Maps</GradientTitle>
       <Title>For different Games</Title>
       <MarginDescription>
-        {`Playing with other members in different games
-Making new friends and have fun!`}
+        {lines(
+          "Playing with other members in different games",
+          "Making new friends and have fun!"
+        )}
       </MarginDescription>
       <div className="flex flex-row flex-wrap gap-10 mt-20">
         <HoneyCup />

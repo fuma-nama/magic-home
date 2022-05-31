@@ -1,4 +1,4 @@
-import { Language } from "../util/translate";
+import { Any, Language } from "../util/translate";
 
 export const cn: Language = {
   //Nav
@@ -10,13 +10,11 @@ export const cn: Language = {
   //Home Page
   "The powerful community for games": "一個樂於助人、龐大而強大的社區",
   "More then": "多於",
-  "100 Members": "100名成員",
   "Join Us": "加入我們",
   "Find your like-minded friends in the server!":
     "在服務器中尋找志同道合的朋友！",
   "Friendly and Helpful": "友好和樂於助人的",
   Peoples: "服務器成員",
-  "Connect with Others": "與職業遊戲玩家、遊戲開發者、遊戲愛好者和專業人士聯繫",
   "Chat Channel for": "不同遊戲的",
   "Different Games": "聊天頻道",
   "Share your moments of games, invite players and play together":
@@ -26,8 +24,6 @@ export const cn: Language = {
   "We care about every member of our server": "我們關心服務器的每個成員",
   "Activities and Maps": "活動和地圖",
   "For different Games": "針對不同的遊戲",
-  "Playing with other members in different games\nMaking new friends and have fun!": `在不同的遊戲中與其他成員一起玩
-  結交新朋友，玩得開心！`,
   "Fight with other players and proof your power!":
     "與其他玩家戰鬥並證明你的力量！",
   "A funny game in Minecraft": "Minecraft中一個有趣的遊戲",
@@ -67,14 +63,53 @@ export const cn: Language = {
   //Info Page
   "The Developer": "本網站的",
   "Of This Website": "開發者",
-  "MONEY Info": `Hello, 我是MONEY
-我在這個網站上工作了一個星期，
-作為一名全棧工程師，我有一個 Github 帳戶和我自己的Youtube頻道
-歡迎訂閱我的頻道或在 Github 上查看我的項目
-`,
   "My Channel": "我的頻道",
   "Report Issues": "報告問題",
-  "Report Issue Info": `這個網站是開源的。
-發現任何問題？在 Github Repo 上告訴我`,
+  "Report Issue Info": ``,
   Repository: "Github存儲庫",
+
+  splits: [
+    {
+      key: [Any, "Members"],
+      value: ([count]) => `${count}名成員`,
+    },
+  ],
+
+  lines: [
+    {
+      key: [
+        "This website is open source.",
+        "Find any Problems? Tell me on the Github Repo!",
+      ],
+      value: ["這個網站是開源的", "發現任何問題？在 Github Repo 上告訴我。"],
+    },
+    {
+      key: [
+        "Connect with Pro Gamers, Game Developers,",
+        "Game lovers and professionals",
+      ],
+      value: "與職業遊戲玩家、遊戲開發者、遊戲愛好者和專業人士聯繫",
+    },
+    {
+      key: [
+        "Playing with other members in different games",
+        "Making new friends and have fun!",
+      ],
+      value: ["在不同的遊戲中與其他成員一起玩，", "結交新朋友，玩得開心！"],
+    },
+    {
+      key: [
+        "Hello, I am MONEY.",
+        "I have been worked on this website for a week,",
+        "As a Full-Stack Engineer, I have a Github account and my own Youtube Channel",
+        "Feel free to subscribe my channel or see My Projects on Github",
+      ],
+      value: [
+        "Hello, 我是MONEY",
+        "我在這個網站上工作了一個星期，",
+        "作為一名全棧工程師，我有一個 Github 帳戶和我自己的Youtube頻道",
+        "歡迎訂閱我的頻道或在 Github 上查看我的項目",
+      ],
+    },
+  ],
 };

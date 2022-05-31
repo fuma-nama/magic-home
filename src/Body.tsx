@@ -12,12 +12,15 @@ import {
   MarginDescription,
   Title,
   LinkButton,
+  spilt,
+  lines,
 } from "./util/components";
 import { Clients } from "./Clients";
 import { Services } from "./services";
 import { FoundersPanel } from "./founders";
 import { SupportPanel } from "./support";
 import { server_link } from "./links";
+
 const Item = extendComponent(
   <div className="flex flex-col gap-5 bg-pink-600 rounded-lg p-2 min-w-max" />
 );
@@ -45,7 +48,12 @@ function FriendlyPanel() {
       <div className="flex flex-col">
         <Title>Friendly and Helpful</Title>
         <GradientTitle>Peoples</GradientTitle>
-        <MarginDescription>Connect with Others</MarginDescription>
+        <MarginDescription>
+          {lines(
+            "Connect with Pro Gamers, Game Developers,",
+            "Game lovers and professionals"
+          )}
+        </MarginDescription>
         <LinkButton link={server_link} className="mt-14">
           Join Us
         </LinkButton>
@@ -88,7 +96,7 @@ function MemberGrid() {
     <Container className="flex flex-col gap-5 w-fit">
       <div className="flex flex-col">
         <Title>More then</Title>
-        <GradientTitle>100 Members</GradientTitle>
+        <GradientTitle>{spilt(200, "Members")}</GradientTitle>
       </div>
       <MarginDescription>
         Find your like-minded friends in the server!
