@@ -65,7 +65,6 @@ export const cn: Language = {
   "Of This Website": "開發者",
   "My Channel": "我的頻道",
   "Report Issues": "報告問題",
-  "Report Issue Info": ``,
   Repository: "Github存儲庫",
 
   splits: [
