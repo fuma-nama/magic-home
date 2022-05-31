@@ -3,6 +3,7 @@
 ![build](https://github.com/SonMooSans/magic-home/actions/workflows/lcu-github-artifacts-release.yml/badge.svg)
 
 Created with Vite, React, Tailwind CSS and Framer Motion in Typescript
+
 Feel free to edit this project and use it for your own.
 
 ## Customize
