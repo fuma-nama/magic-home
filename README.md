@@ -4,17 +4,24 @@
 
 Created with Vite, React, Tailwind CSS and Framer Motion in Typescript
 
-Feel free to edit this project and use it for your own.
+Feel free to clone this project and use it for your own.
 
+## Features
+- Built-in small component library
+- Fully animated
+- Support Multi Language
+- Built-in small Multi Language Library to improve readability of code.
+- Modify some of the data without code
+ 
 ## Customize
 
-You can modify displayed Server Info in [here](./src/info/).
+You can modify displayed Server Info inside [this folder](./src/info/).
 
 ## Website
 
-Take a look to the Website [Here](https://4b936714ce90-shared.fathym-it.com/),
+Take a look to the Website from [here](https://4b936714ce90-shared.fathym-it.com/),
 
-The website is host by **Fathym**.
+The website is hosted by **Fathym**.
 
 ## Actions
 
