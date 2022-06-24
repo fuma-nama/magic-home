@@ -17,12 +17,12 @@ export default [
   {
     name: "Heat 1083711",
     avatar:
-      "https://cdn.discordapp.com/avatars/300555114945576960/3d0246431c70b3aaaaff84fe8256a7f4.webp",
+      "https://cdn.discordapp.com/avatars/300555114945576960/82af5baa19c663f4a7d2912ca5d051d0.webp",
   },
   {
     name: "MONEY",
     avatar:
-      "https://cdn.discordapp.com/avatars/572329183334891520/44978b0a8e423d20fd1a278d50961def.webp",
+      "https://cdn.discordapp.com/avatars/572329183334891520/278effc51d638314c09e0d611e7be0e3.webp",
   },
   {
     name: "糖Cakey__",
@@ -32,11 +32,11 @@ export default [
   {
     name: "Kuan Chen",
     avatar:
-      "https://cdn.discordapp.com/avatars/429461529302138881/c3300cf8092a63209c5c2548bcd83b4a.webp",
+      "https://cdn.discordapp.com/avatars/429461529302138881/b38875b67efe8760c9ad183e0772fcc7.webp",
   },
   {
     name: "傑瑞",
     avatar:
-      "https://cdn.discordapp.com/avatars/747028896276283443/29b09e42061a6b77f5864f42bafe5eba.webp",
+      "https://cdn.discordapp.com/avatars/747028896276283443/8e5830b057cd85441446143495451c08.webp",
   },
 ];

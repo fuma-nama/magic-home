@@ -7,11 +7,11 @@ export default {
   developer: {
     name: "MONEY#3897",
     avatar:
-      "https://cdn.discordapp.com/avatars/572329183334891520/44978b0a8e423d20fd1a278d50961def.webp",
+      "https://cdn.discordapp.com/avatars/572329183334891520/278effc51d638314c09e0d611e7be0e3.webp",
   },
   admin: {
     name: "傑瑞#0779",
     avatar:
-      "https://cdn.discordapp.com/avatars/747028896276283443/29b09e42061a6b77f5864f42bafe5eba.webp",
+      "https://cdn.discordapp.com/avatars/747028896276283443/8e5830b057cd85441446143495451c08.webp",
   },
 };

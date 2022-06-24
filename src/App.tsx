@@ -13,6 +13,7 @@ import {
   useTranslate,
 } from "./util/translate";
 import { en } from "./languages/en";
+import server from "./info/server";
 
 function App() {
   const [lang, setLang] = useState("cn");
@@ -81,10 +82,7 @@ function Nav({ tab, setTab }: { tab: Tabs; setTab: (index: Tabs) => void }) {
 
   return (
     <div className="flex flex-row bg-black/80 backdrop-blur-lg sticky top-0 w-full z-20 p-5 items-center gap-5 overflow-x-auto">
-      <img
-        src="https://cdn.discordapp.com/icons/676806725105352704/a_ace5313f9065cdf99038087ce4ed76cb.gif"
-        className="h-10 rounded-full"
-      />
+      <img src={server.icon} className="h-10 rounded-full" />
       <a className="text-xl font-bold">綜合資本小天堂</a>
 
       <div className="flex flex-row gap-5">
